@@ -9,6 +9,45 @@
   --border-radius: 0.3rem;
 }
 
+header {
+  padding: 40px;
+  margin: 0;
+  text-align: left;
+  background: var(--primary);
+  color: var(--light);
+
+}
+
+nav {
+  display: flex;
+  background-color: var(--primary);
+}
+nav a {
+  color: var(--light);
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+nav a:hover {
+  color: var(--secondary);
+  background-color: var(--dark);
+}
+
+.tech_blog {
+  width: 400px;
+  background: var(--light);
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  /*border: 5px blue;*/
+  border-radius: 10px 10px 10px 10px; /* [top_left, top_right, lower_right, lower_left] */
+  box-shadow: 7px 7px 0px 0px red; /* [horizontal_offset, vertical_offset, blur_radius, spread, color] */
+}
+.tech_blog p{
+  font-size: 200%;
+}
+
+
 body {
   font-family: Arial;
   margin: 0;
@@ -28,16 +67,6 @@ a:visited {
   color: inherit;
 }
 
-header {
-  padding: 40px;
-  text-align: left;
-  background: var(--primary);
-  color: var(--light);
-}
-.tech_blog {
-  background: wheat;
-  color: black;
-}
 
 main {
   display: flex;
@@ -53,22 +82,6 @@ aside {
   color: var(--light);
 }
 
-nav {
-  display: flex;
-  background-color: var(--secondary);
-}
-
-nav a {
-  color: var(--light);
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-nav a:hover {
-  color: var(--secondary);
-  background-color: var(--dark);
-}
 
 .gallery {
   flex: 4;
