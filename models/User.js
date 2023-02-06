@@ -8,6 +8,9 @@ class User extends Model {
   }
 }
 
+/* define "User" table:
+  [id, username, email, password]
+*/
 User.init(
   {
     id: {
