@@ -35,7 +35,8 @@ router.get('/', async (req, res) => {
     console.log(posts[0].title);
     console.log(posts[0].post_content);
     
-    // ./views/homepage.handlebars -> ./views/layouts/main.handlebars
+    // ./views/homepage.handlebars -> 
+    // ./views/layouts/main.handlebars
     /*
     res.render('homepage', {
       posts,
@@ -52,6 +53,18 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
   console.log('jw4');
+});
+
+
+// Login route
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  // ./views/login.handlebars -> 
+  // ./views/layouts/main.handlebars
+  res.render('login');
 });
 
 /*
