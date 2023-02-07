@@ -13,7 +13,8 @@ router.get('/', async (req, res) => {
         },
         {
           model: User,
-          attributes: ['username','twitter','github']
+          attributes: ['username','twitter','github'],
+          //attributes: ['username'],
         }
       ],
     });
@@ -21,9 +22,19 @@ router.get('/', async (req, res) => {
     const posts = dbPostData.map((post) =>
       post.get({ plain: true })
     );
+
+    console.log("======================");
+    console.log(posts);
+    
+    // ./views/homepage.handlebars -> ./views/layouts/main.handlebars
+    /*
     res.render('homepage', {
       posts,
       loggedIn: req.session.loggedIn,
+    });
+    */
+    res.render('homepage', {
+      posts
     });
   } catch (err) {
     console.log(err);
@@ -31,6 +42,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+/*
 // GET one gallery
 router.get('/gallery/:id', async (req, res) => {
   try {
@@ -79,5 +91,5 @@ router.get('/login', (req, res) => {
   }
   res.render('login');
 });
-
+*/
 module.exports = router;

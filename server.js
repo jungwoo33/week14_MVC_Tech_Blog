@@ -19,7 +19,7 @@ const sess = {
   cookie: {
     // Stored in milliseconds
     // maxAge seets the maximum age for the cookie to be valid. Here, the cookie (and session) will expire after one hour. 
-    maxAge: 60 * 60 * 1000, // expires after 1 hr
+    maxAge: 10 * 60 * 1000, // expires after 10 min
     // If it is an http only cookie, this mean client side javascript can't access it.
     httpOnly: true,
     // secure tells express-session to only initialize session cookies when the protocol being used is HTTPS. Having this set to true, and running a server without encryption will result in the cookies not showing up in your developer console.
@@ -47,6 +47,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+console.log('jw1');
 app.use(routes); // call ./controllers/index.js
 
 sequelize.sync({ force: false }).then(() => {
