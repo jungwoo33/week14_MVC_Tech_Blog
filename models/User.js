@@ -23,14 +23,6 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    twitter: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    github: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },    
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -52,7 +44,7 @@ User.init(
       async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
-      },
+      }
     },
     sequelize,
     timestamps: false,
