@@ -1,0 +1,8 @@
+This is the flow chart:
+	server.js
+		call ./controllers/index.js
+			call ./controllers/home-routes.js
+			call ./controllers/dashboard-routes.js
+			call ./controllers/api/index.js
+				call ./controllers/api/user-routes.js
+		

@@ -46,7 +46,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-console.log('jw1');
+//console.log('jw1');
 app.use(routes); // call ./controllers/index.js
 
 sequelize.sync({ force: false }).then(() => {

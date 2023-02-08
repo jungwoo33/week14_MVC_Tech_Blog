@@ -4,12 +4,14 @@ const { User } = require('../../models');
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
+    // This is the first time creating account
     const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
 
+    // Set up sessions with the 'loggedIn' variable
     req.session.save(() => {
       req.session.loggedIn = true;
 
@@ -47,6 +49,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
+      // Once the user successfully logs in, set up sessions with the 'loggedIn' variable
       req.session.loggedIn = true;
 
       res
@@ -58,9 +61,12 @@ router.post('/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
+console.log('jwwww');
+
 
 // Logout
 router.post('/logout', (req, res) => {
+  // When the user logs out, the session is destroyed
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();

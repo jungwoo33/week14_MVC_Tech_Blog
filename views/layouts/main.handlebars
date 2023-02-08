@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Museum</title>
+  <title>Tech_Blog</title>
   <link rel="stylesheet" type="text/css" href="/css/jass.css"> <!-- Normalizer -->
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
@@ -12,9 +12,28 @@
 <body>
   <header>
     <nav>
-      <a href="/">Home</a>
-      <a href="/Dashboard">Dashboard</a>
+      <!-- this is a simple test -->
+      <!--
+      <a href="/">Home</a> 
+      <a href="/dashboard">Dashboard</a>
+      <a href="/login">Login</a>
+      -->
+      <!-- 
+        always 
+          show "Home" button 
+        if logged in:
+          show "Dashboard" button since a user is logged-in, "Dashboard" is a user's personal thing
+          show "Logout" button
+        else
+          show "Login" button
+        end if
+      -->
+      <a href="/">Home</a> 
       {{#if loggedIn}}
+      <!-- link to localhost:3001/dashboard
+        and, it will call: /controllers/dashboard-routes.js
+      -->
+      <a href="/dashboard">Dashboard</a>
       <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
       <a href="/login">Login</a>
