@@ -5,44 +5,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech_Blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"> <!-- Now, I am using Bulma css --> 
   <link rel="stylesheet" type="text/css" href="/css/jass.css"> <!-- Normalizer -->
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css"> <!-- My personal css --> 
 </head>
 
 <body>
   <header>
+    <div class="blog_title">
+      <h1>The Tech Blog</h1> <!-- This is the title of this blog -->
+    </div>
+    <!-- 
+      always 
+        show "Home" button 
+      if logged in:
+        show "Dashboard" button since a user is logged-in, "Dashboard" is a user's personal thing
+        show "Logout" button
+      else
+        show "Login" button
+      end if
+    -->
     <nav>
-      <!-- this is a simple test -->
-      <!--
-      <a href="/">Home</a> 
-      <a href="/dashboard">Dashboard</a>
-      <a href="/login">Login</a>
-      -->
-      <!-- 
-        always 
-          show "Home" button 
-        if logged in:
-          show "Dashboard" button since a user is logged-in, "Dashboard" is a user's personal thing
-          show "Logout" button
-        else
-          show "Login" button
-        end if
-      -->
       <a href="/">Home</a> 
       {{#if loggedIn}}
       <!-- link to localhost:3001/dashboard
         and, it will call: /controllers/dashboard-routes.js
       -->
       <a href="/dashboard">Dashboard</a>
-      <button id="logout" class="btn-no-style">Logout</button>
+      <button id="logout" class="logout_button">Logout</button>
       {{else}}
       <a href="/login">Login</a>
       {{/if}}
     </nav>
-    <section class="tech_blog">
-      <p>The Tech Blog</p> <!-- This will be switched to "Your Dashboard" -->
-    </section>    
   </header>
+
   <main>
     <div>
       {{{body}}}

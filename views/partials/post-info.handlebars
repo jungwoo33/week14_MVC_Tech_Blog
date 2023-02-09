@@ -1,37 +1,10 @@
 <div class="each_post">
     <h2 class="each_post_title">{{title}}</h2>
     <p class="each_post_body">{{post_content}}</p>
-
-</div>
-
-
-<!--
-<div class="card mb-6">
-  <header class="card-header card-header-title has-background-grey-lighter">
-    
-        <div class="column">
-            <p class=" has-text-primary-light"></p>
-      <a href="/post/{{id}}"  class="has-text-black is-capitalized is-pulled-left">{{title}} </a></p>
-      </div>
-
-      <div class="column">
-      <span class=""> </span>
-      </div>
-    
-  </header>
-
-    <div class="card-content">
-        <div class="content has-text-justified">
-            {{post_content}}
-        </div>
-            <div class="is-pulled-right">
-                
-                <b>{{user.username}}</b> | 
-                <a href="https://twitter.com/{{user.twitter}}"><i class="fab fa-twitter"></i></a> 
-                <a href="https://github.com/{{user.github}}"><i class="fab fa-github"></i></a>
-                 | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-                
-            </div>
-        
+    <div class = "align_right">
+        <!--
+            Note: "format_date" is pulled from /utils/helpser.js
+        -->
+        <P>Posted By: {{user.username}} | {{format_date created_at}}</P>
     </div>
--->
+    
