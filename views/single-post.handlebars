@@ -1,0 +1,27 @@
+<!-- insert /views/partials/post-info.handlebars --> 
+{{> post-info post}}
+
+<!-- only display for a logged-in user -->
+{{#if loggedIn}}
+<form class="comment-form">
+   <div>
+      <textarea class="textarea" name="comment-body" placeholder="your comments here:" rows="5"></textarea>
+   </div>
+
+   <div>
+      <button class="button is-info is-pulled-right" type="submit">add comment</button>
+   </div>
+</form>
+{{/if}}
+
+<!-- Now, show the existing comments:
+   insert /views/partials/comments.handlebars feedting with "post.comments"
+   this partial will display (e.g.):
+      Sam5 on 2/10/2023
+      Nice work!
+-->
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/js/comment.js"></script>
+{{/if}}

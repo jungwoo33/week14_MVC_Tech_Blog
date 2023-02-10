@@ -53,11 +53,18 @@ nav a:hover {
   background-color: var(--light_purple);
 }
 
-/*
-.logout_button{
-  background-color: greenyellow;
+.logout_button {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--white);
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--dark_blue);
 }
-*/
+.logout_button:hover{
+  background-color: var(--light_purple);
+}
 
 main {
   flex: 1;
@@ -85,7 +92,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   border: 1px solid var(--dark_blue);
   /* this is same as above
   border-style: solid;
@@ -122,6 +129,62 @@ a {
   text-decoration: none;
 }
 
+
+
+
+
+
+
+
+.login-card {
+  margin: 0 0 20px 0;
+  flex: 0 0 50%;
+  max-width: 30%;
+  padding: 5px;
+  border: 3px solid var(--dark_blue);
+  border-radius: var(--border-radius);
+  border-style: double;
+  border-width: thick;
+  background-color: var(--light_blue);
+  color: black;  
+}
+
+
+.card {
+  margin: 20px;
+  flex: 0 1 300px;
+  border: 7px double var(--dark);
+  border-radius: 10px;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.card header {
+  color: var(--light);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  background-color: var(--tertiary);
+  padding: 0.625rem;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+.card-body {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.comment {
+  padding: 1%;
+  margin-bottom: 0.2%;
+  background-color: wheat;
+}
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: .5%;
+  opacity: .6;
+}
 
 
 
@@ -186,46 +249,7 @@ img {
 /* CARDS */
 
 
-
-.login-card {
-  margin: 0 0 20px 0;
-  flex: 0 0 50%;
-  max-width: 30%;
-  padding: 5px;
-  border: 3px solid var(--dark_blue);
-  border-radius: var(--border-radius);
-  border-style: double;
-  border-width: thick;
-  background-color: var(--light_blue);
-  color: black;  
-}
-
-
-.card {
-  margin: 20px;
-  flex: 0 1 300px;
-  border: 7px double var(--dark);
-  border-radius: 10px;
-  background-color: var(--light);
-  color: var(--dark);
-}
-
-.card header {
-  color: var(--light);
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 0;
-  background-color: var(--tertiary);
-  padding: 0.625rem;
-  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-}
-
-.card-body {
-  font-size: 1.4rem;
-  text-align: center;
-  font-weight: bold;
-}
-
+/*
 .gallery-name {
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -237,10 +261,10 @@ img {
   padding-left: 100px;
 }
 
-/* LAYOUT */
 .container {
   display: flex;
   flex-flow: column wrap;
   align-content: flex-start;
   align-items: center;
 }
+*/
