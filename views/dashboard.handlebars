@@ -1,26 +1,26 @@
-      <!-- 
-         If a logged-in user has posts, show them.
-         If a logged-in user does not have a post, just show "create Post" button to create one.
+    <!-- 
+      If a logged-in user has posts, show them.
+      If a logged-in user does not have a post, just show "create Post" button to create one.
       --> 
-      <div class="mb-5 pt-3">
-         <a href="/dashboard/create/"><button id="create-post" class="button is-primary is-pulled-right">create post</button></a>
+    <div class="mb-5 pt-3">
+      <a href="/dashboard/create/"><button id="create-post" class="button is-primary is-pulled-right">create post</button></a>
         
-         <h2 class="title pb-4">Your dashboard: followings are your posts:</h2><hr>
+      <h2 class="title pb-4">Your dashboard: followings are your posts:</h2><hr>
 {{#if posts.length}}
-      </div>
+    </div>
 
-      {{#each posts as |post|}}
-         <!-- insert /views/partials/post-info.handlebars --> 
-         {{> post-info post}}
-            <!-- 
-               this will go back to /controllers/dashboard-routes.js
-               then, direct to:
-                  router.get('/edit/:id', withAuth, async (req, res) => {
-               Here, # is the autual post number (i.e., post.id)
-            --> 
-            <a href="/dashboard/edit/{{post.id}}"><button class="button is-warning is-pulled-right">edit post</button></a>
-         </div>
-      {{/each}}
+    {{#each posts as |post|}}
+      <!-- insert /views/partials/post-info.handlebars --> 
+      {{> post-info post}}
+      <!-- 
+        this will go back to /controllers/dashboard-routes.js
+        then, direct to:
+          router.get('/edit/:id', withAuth, async (req, res) => {
+        Here, # is the autual post number (i.e., post.id)
+      --> 
+      <a href="/dashboard/edit/{{post.id}}"><button class="button is-warning is-pulled-right">edit post</button></a>
+    </div>
+  	{{/each}}
 {{else}}
 <h6 class="pb-4 has-text-centered is-italic">You do not have any posts yet</h6>
 

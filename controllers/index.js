@@ -10,6 +10,6 @@ router.use('/dashboard',dashboardRoutes); // call /controllers/dashboard-routes.
 
 router.use((req, res) => {
    res.status(404).end();
- }); 
+}); 
 
 module.exports = router;

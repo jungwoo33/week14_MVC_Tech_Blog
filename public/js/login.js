@@ -18,11 +18,6 @@ const loginFormHandler = async (event) => {
 
     // if successfully logged-in, send to: localhost:3001/dashboard
     if (response.ok) {
-      /*
-      console.log('==============================================================');
-      console.log('I am sending you to: /dashboard')
-      */
-
       document.location.replace('/dashboard');
     } else {
       alert('Failed to log in.');

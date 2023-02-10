@@ -30,11 +30,9 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
-      where: {
-        // use the ID from the session
-        user_id: req.session.user_id
-      },
+      where: {user_id: req.session.user_id}, // use the ID from the session
       attributes:['id','title','created_at','post_content'],
+      order: [['created_at','DESC']], // I will show the recent post first
       include: [
         {
           model: Comment,
@@ -53,15 +51,9 @@ router.get('/', withAuth, async (req, res) => {
   
     const posts = dbPostData.map((post) =>
       post.get({ plain: true })
-    );
-    
-    console.log("================================================");
-    console.log("================================================");
-    console.log("================================================");
-    console.log("================================================");
-    console.log("================================================");
-    console.log(posts);
+    );    
     /*
+    console.log(posts);
     console.log(posts[0].id);
     console.log(posts[0].title);
     console.log(posts[0].post_content);
@@ -84,9 +76,7 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
     const dbPostData = await Post.findOne({
-      where: {
-        id: req.params.id
-      },
+      where: {id: req.params.id},
       attributes: ['id','title','created_at','post_content'],
       include: [
         {
@@ -135,10 +125,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
 router.get('/create/', withAuth, async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
-      where: {
-        // use the ID from the session
-        user_id: req.session.user_id
-      },
+      where: {user_id: req.session.user_id}, // use the ID from the session
       attributes: ['id','title','created_at','post_content'],
       include: [
         {

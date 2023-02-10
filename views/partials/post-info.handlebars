@@ -1,19 +1,18 @@
 <div class="each_post">
-    <h2 class="each_post_title">{{title}}</h2>
-    <p class="each_post_body">{{post_content}}</p>
-    <div class = "align_right">
-        <!--
-            Note: "{{format_date created_at}}" is pulled from /utils/helpser.js
-            then, "format_date" helper will convert "created_at" value to [mm/dd/yyyy]
-            {{comments.length}} {{format_plural "comment" comments.length}} part will show, e.g.,
-                1 comment
-                2 comments
-                ...
-            and it will be linked to each post (i.e.,):
-                localhost:3001/post/#
-            and the route is defined in:
-                /controllers/home-routes.js
-        -->
-        <P>Posted By: {{user.username}} | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a></P>
-    </div>
-    
+  <h2 class="each_post_title">{{title}}</h2>
+  <p class="each_post_body">{{post_content}}</p>
+  <div class = "align_right">
+		<!--
+			Note: "{{format_date created_at}}" is pulled from /utils/helpser.js
+				then, "format_date" helper will convert "created_at" value to [mm/dd/yyyy]
+				{{comments.length}} {{format_plural "comment" comments.length}} part will show, e.g.,
+					1 comment
+					2 comments
+					...
+				and it will be linked to each post (i.e.,):
+					localhost:3001/post/#
+				and the route is defined in:
+					/controllers/home-routes.js
+		-->
+		<P>Posted By: {{user.username}} | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a></P>
+  </div>

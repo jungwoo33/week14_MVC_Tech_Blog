@@ -11,21 +11,21 @@ mysql> select * from comment;
 +----+---------+---------+--------------+---------------------+---------------------+
 */
 const commentdata = [
-   {
-      user_id: 1,
-      post_id: 1,
-      comment_text: "Wow1"
-   },
-   {
-      user_id: 2,
-      post_id: 2,
-      comment_text: "Wow2"
-   },
-   {
-      user_id: 3,
-      post_id: 3,
-      comment_text: "Wow3"
-   },
+  {
+    user_id: 1,
+    post_id: 2,
+    comment_text: "Wow to post2 by Sam1"
+  },
+  {
+    user_id: 2,
+    post_id: 3,
+    comment_text: "Wow to post3 by Sam2"
+  },
+  {
+    user_id: 3,
+    post_id: 1,
+    comment_text: "Wow to post1 by Sam3"
+  },
 ]
 const seedComments = () => Comment.bulkCreate(commentdata);
 

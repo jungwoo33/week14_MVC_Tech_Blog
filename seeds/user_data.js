@@ -11,21 +11,21 @@ mysql> select * from user;
 +----+------------+----------------------+----------+
 */
 const userdata = [
-   {
-      username: "Sam1",
-      email: "sam1@gmail.com",
-      password: "pw0001"
+  {
+    username: "Sam1",
+    email: "sam1@gmail.com",
+    password: "pw0001"
   },
   {
     username: "Sam2",
     email: "sam2@gmail.com",
     password: "pw0002"
-},
+  },
   {
     username: "Sam3",
     email: "sam3@gmail.com",
     password: "pw0003"
-},
+  },
 ]
 const seedUsers = () => User.bulkCreate(userdata);
 

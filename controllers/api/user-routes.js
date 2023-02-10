@@ -2,8 +2,8 @@ const router = require('express').Router();
 const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// we are in /api/user/
-// GET /api/users
+// I am in:
+//    localhost:3001/api/users/
 router.get('/', (req, res) => {
   // Access our User model and run .findAll() method
   User.findAll({
@@ -20,9 +20,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password']},
-    where: {
-      id: req.params.id
-    },
+    where: {id: req.params.id},
     include: [
       {
         model: Post,
@@ -51,8 +49,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-
-// CREATE new user
+// create new user
 router.post('/', async (req, res) => {
   try {
     // This is the first time creating account
@@ -65,7 +62,6 @@ router.post('/', async (req, res) => {
     // Set up sessions with the 'loggedIn' variable
     req.session.save(() => {
       req.session.loggedIn = true;
-
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -78,9 +74,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
   User.update(req.body, {
     individualHooks: true,
-    where: {
-      id: req.params.id
-    }
+    where: {id: req.params.id}
   })
   .then(dbUserData => {
     if (!dbUserData[0]) {
@@ -98,9 +92,7 @@ router.put('/:id', withAuth, (req, res) => {
 // DELETE /api/users/1
 router.delete('/:id', withAuth, (req, res) => {
   User.destroy({
-    where: {
-      id: req.params.id
-    }
+    where: {id: req.params.id}
   })
   .then(dbUserData => {
     if (!dbUserData) {
@@ -120,9 +112,7 @@ router.post('/login', async (req, res) => {
   try {
     // First, check if there is a matching email in our db
     const dbUserData = await User.findOne({
-      where: {
-        email: req.body.email,
-      },
+      where: {email: req.body.email,},
     });
 
     if (!dbUserData) {
