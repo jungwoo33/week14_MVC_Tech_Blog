@@ -34,7 +34,15 @@
       <a href="/dashboard">Dashboard</a>
       <button id="logout" class="logout_button">Logout</button>
       {{else}}
+      <!-- link to localhost:3001/login
+        and, it will call /controllers/home-routes.js
+        then, it will find "router.get('/login', (req, res) => {"
+        then, it will render the 'login' template
+          ./views/login.handlebars -> 
+          ./views/layouts/main.handlebars
+      --> 
       <a href="/login">Login</a>
+      <a href="/signup">Signup</a>
       {{/if}}
     </nav>
   </header>

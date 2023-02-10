@@ -1252,8 +1252,7 @@ form [type='radio'] {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-left: -15px;
-  margin-right: -15px;
+  justify-content: center; /* this will let the item in the center */
 }
 
 [class*='col-'] {

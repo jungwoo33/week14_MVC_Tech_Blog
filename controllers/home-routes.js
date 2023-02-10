@@ -63,10 +63,24 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  // Otherwise, render the 'login' template; note: 'login.handlebars' contains both 'login' & 'signup' parts
+  // Otherwise, render the 'login' template
   // ./views/login.handlebars -> 
   // ./views/layouts/main.handlebars
   res.render('login');
+});
+
+// Signup route
+router.get('/signup', (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  // Otherwise, render the 'signup' template
+  // ./views/signup.handlebars -> 
+  // ./views/layouts/main.handlebars
+  res.render('signup');
 });
 
 module.exports = router;
