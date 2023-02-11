@@ -75,7 +75,7 @@ This project has the following directory structure:
 [GitHub:] https://github.com/jungwoo33/week14_MVC_Tech_Blog<br>
 View walk through video here - [Screencastify](https://drive.google.com/file/d/11xE_7HT_q0aWY7j2gaHH3Z_Hk2jR9qg5/view)<br>
 or the original video file is in `./assets/mvc_tech_blog.avi`<br>
-The final application is deployed in Heroku: https://enigmatic-cliffs-38138.herokuapp.com/
+The final application is deployed in Heroku: https://git.heroku.com/still-stream-47597.git
 [![A video thumbnail shows the command-line employee management application with a play button overlaying the view.](./assets/mvc_tech_blog.png)](https://drive.google.com/file/d/11xE_7HT_q0aWY7j2gaHH3Z_Hk2jR9qg5/view)
 
 ## 7. Questions?:
