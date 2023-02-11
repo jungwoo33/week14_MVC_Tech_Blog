@@ -49,7 +49,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //console.log('jw1');
 app.use(routes); // call ./controllers/index.js
 
-sequelize.sync({ force: false }).then(() => {
+//sequelize.sync({ force: false }).then(() => {
+sequelize.authenticate({ force: false }).then(() => {  
   app.listen(PORT, () =>
     console.log(
       `\nServer running on port ${PORT}. Visit http://localhost:${PORT} and create an account!`
