@@ -1,5 +1,5 @@
 {
-  "name": "museum-paintings",
+  "name": "MVC_Tech_Blog",
   "version": "1.0.1",
   "description": "",
   "main": "server.js",
@@ -9,8 +9,8 @@
     "nodemon": "nodemon server.js",
     "seed": "node seeds/index.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jungwoo Lee",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
