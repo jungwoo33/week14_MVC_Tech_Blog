@@ -56,6 +56,49 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+// router.get('/', (req, res) => {
+//   Post.findAll({
+//       attributes:['id','title','created_at','post_content'],
+//       order: [['created_at','DESC']], // I will show the recent post first.
+//       /*limit: 10,*/
+//       include: [
+//         {
+//           model: Comment,
+//           attributes: ['id','user_id','post_id','comment_text','created_at'],
+//           include: {
+//             model: User,
+//             attributes: ['username']
+//           }
+//         },
+//         {
+//           model: User,
+//           attributes: ['username']
+//         }
+//       ],
+//   }).then(dbPostData => {
+
+//     const posts = dbPostData.map(post =>
+//       post.get({ plain: true })
+//     );
+//      console.log("======================");
+//      console.log(posts);
+// //     console.log(posts[0].id);
+// //     console.log(posts[0].title);
+// //     console.log(posts[0].post_content);
+// //     console.log(posts[0].comments);
+// //     console.log(posts[0].user);           // { username: 'Sam1' }
+// //     console.log(posts[0].user.username);  // "Sam1"
+
+
+//     res.render('homepage', {posts, loggedIn: req.session.loggedIn,});
+//   }).catch (err => {
+//     console.log(err);
+//     res.status(500).json(err);
+//   });
+// });
+
+
 router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {id: req.params.id},
